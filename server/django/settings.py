@@ -24,7 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'backend.excursions',
+    'excursions',
 ]
 
 MIDDLEWARE = [
@@ -42,7 +42,7 @@ CORS_ALLOWED_ORIGINS = [
   'http://localhost:5173'
 ]
 
-ROOT_URLCONF = 'backend.urls'
+ROOT_URLCONF = 'django.urls'
 
 TEMPLATES = [
     {
@@ -60,7 +60,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.application'
+WSGI_APPLICATION = 'django.wsgi.application'
 
 
 # Database
