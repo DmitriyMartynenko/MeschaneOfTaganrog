@@ -42,7 +42,7 @@ CORS_ALLOWED_ORIGINS = [
   'http://localhost:5173'
 ]
 
-ROOT_URLCONF = 'django.urls'
+ROOT_URLCONF = 'server.urls'
 
 TEMPLATES = [
     {
@@ -60,7 +60,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'django.wsgi.application'
+WSGI_APPLICATION = 'server.wsgi.application'
 
 
 # Database
