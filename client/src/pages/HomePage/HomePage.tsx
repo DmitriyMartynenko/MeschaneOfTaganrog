@@ -100,7 +100,7 @@ const HomePage = () => {
         <Header isMobile={isMobile} />
         <div className={styles.promoContent}>
           <div className={styles.promoTitleContainer}>
-            <h1 className={styles.promoTitle}>Иммерсивные экскурсии</h1>
+            <h1 className={styles.promoTitle}>Мещанский Таганрог: Иммерсивные экскурсии</h1>
             <div className={styles.promoSignUpContainer}>
               <SignUp
                 inputRef={orderExcursionInputRef}

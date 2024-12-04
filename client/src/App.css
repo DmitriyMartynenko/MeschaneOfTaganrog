@@ -1,8 +1,16 @@
+@font-face {
+  font-family: 'Chibola';
+  src: url('./assets/fonts/Chibola.ttf'), format(ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: "Montserrat", serif;
+  /* font-family: "Montserrat", serif; */
+  font-family: 'Chibola';
 }
 
 html {
