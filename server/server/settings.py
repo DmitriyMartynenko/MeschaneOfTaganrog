@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-dbpzl(g)!smzxmf@s0jj+tf#vn4s(cyz$s3_td*eq86(q%(^&1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["your-django-backend.onrender.com"]
+ALLOWED_HOSTS = ['meschane-of-taganrog-server.onrender.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,7 +39,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-  'http://localhost:5173'
+  'https://meschane-of-taganrog.onrender.com'
 ]
 
 ROOT_URLCONF = 'server.urls'

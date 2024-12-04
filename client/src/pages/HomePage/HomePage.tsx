@@ -85,7 +85,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const targetElementId = window.location.hash.slice(1);
-    debugger;
+
     if (targetElementId) {
       const targetElement = document.getElementById(targetElementId);
       if (targetElement) {

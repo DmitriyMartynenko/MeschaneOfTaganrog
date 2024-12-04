@@ -100,7 +100,6 @@ const SignUpModal = (props: SignUpModalProps) => {
   }, []);
 
   if (!isOpen) return null;
-  debugger;
   return createPortal(
     <div className={styles.signUpModal}>
       <div className={styles.signUpModalWrapper}>
