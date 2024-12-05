@@ -43,7 +43,7 @@
     text-align: center;
   }
 }
-.headerLink:after {
+.headerLink::after {
   content: '';
   position: absolute;
   left: 0;
@@ -52,8 +52,9 @@
   height: 2px;
   background-color: #E3C37A;
   transition: width 0.5s ease;
-
-  @media (max-width: 768px) {
+}
+@media (max-width: 768px) {
+  .headerLink::after {
     display: none;
   }
 }
