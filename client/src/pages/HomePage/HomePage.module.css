@@ -68,6 +68,7 @@
   margin: 0;
   padding: 0;
   color: white;
+  font-family: 'Chibola';
   font-size: 3rem;
   font-weight: 300;
   text-shadow:
@@ -86,6 +87,14 @@
   }
 }
 
+.promoTitleHighlighted {
+  font-size: 4rem;
+  color: #A4834E;
+
+  @media (max-width: 768px) {
+    font-size: 2.75rem;
+  }
+}
 
 .promoSignUpContainer {
   width: 80%;
