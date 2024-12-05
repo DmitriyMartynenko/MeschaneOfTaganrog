@@ -63,10 +63,6 @@
 
 .headerLink:hover {
   color: #E3C37A;
-
-  @media (max-width: 768px) {
-    color: green;
-  }
 }
 
 .headerLink:hover::after {
