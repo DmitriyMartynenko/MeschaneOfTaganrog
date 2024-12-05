@@ -43,6 +43,7 @@
     text-align: center;
   }
 }
+
 .headerLink::after {
   content: '';
   position: absolute;
@@ -53,17 +54,21 @@
   background-color: #E3C37A;
   transition: width 0.5s ease;
 }
+
 @media (max-width: 768px) {
   .headerLink::after {
     display: none;
   }
 }
+
 .headerLink:hover {
   color: #E3C37A;
 }
+
 .headerLink:hover::after {
   width: 100%;
 }
+
 .headerLink:active {
   color: #e3c37acc;
 }

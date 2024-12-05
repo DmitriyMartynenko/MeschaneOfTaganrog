@@ -18,6 +18,10 @@
 }
 .button:hover {
   background-color: #D4B068;
+
+  @media (max-width: 768px) {
+    background-color: green;
+  }
 }
 .button:active {
   background-color: #BFA259;
