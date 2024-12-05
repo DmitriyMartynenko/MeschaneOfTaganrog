@@ -53,8 +53,8 @@
   background-color: #E3C37A;
   transition: width 0.5s ease;
 
-  @media screen and (max-width: 768px) {
-    content: none;
+  @media (max-width: 768px) {
+    display: none;
   }
 }
 .headerLink:hover {
@@ -62,10 +62,6 @@
 }
 .headerLink:hover::after {
   width: 100%;
-
-  @media screen and (max-width: 768px) {
-    width: 0;
-  }
 }
 .headerLink:active {
   color: #e3c37acc;
