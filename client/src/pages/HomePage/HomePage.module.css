@@ -23,10 +23,6 @@
   background-repeat: no-repeat;
   filter: blur(4px);
   opacity: 0.92;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
 }
 
 .promoContent {
