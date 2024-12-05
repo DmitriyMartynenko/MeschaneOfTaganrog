@@ -36,16 +36,19 @@
   text-decoration: none;
   transition: color 0.3s ease;
 
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     padding: 0.75rem 0.5rem;
     border: 1px solid #B1B1B1;
     font-size: 0.875rem;
     text-align: center;
-  }
+  } */
 }
 
 @media (max-width: 768px) {
-  .headerLink::after {
+  .headerLink {
+    color: red
+  }
+  /* .headerLink::after {
     content: '';
     position: absolute;
     left: 0;
@@ -58,7 +61,7 @@
 
   .headerLink:hover::after {
     display: none;
-  }
+  } */
 }
 /* .headerLink:hover {
   color: #E3C37A;
