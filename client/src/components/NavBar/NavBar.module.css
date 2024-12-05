@@ -62,6 +62,10 @@
 }
 .headerLink:hover::after {
   width: 100%;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 .headerLink:active {
   color: #e3c37acc;
