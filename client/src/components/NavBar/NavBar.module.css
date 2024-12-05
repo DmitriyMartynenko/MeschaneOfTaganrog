@@ -43,7 +43,7 @@
     text-align: center;
   }
 }
-.headerLink::after {
+.headerLink:after {
   content: '';
   position: absolute;
   left: 0;
@@ -52,16 +52,16 @@
   height: 2px;
   background-color: #E3C37A;
   transition: width 0.5s ease;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 .headerLink:hover {
   color: #E3C37A;
 }
 .headerLink:hover::after {
   width: 100%;
-
-  @media (max-width: 768px) {
-    display: none;
-  }
 }
 .headerLink:active {
   color: #e3c37acc;
