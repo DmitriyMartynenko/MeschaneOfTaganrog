@@ -10,7 +10,7 @@
   }
 
   @media (max-width: 768px) {
-    padding: 0
+    padding: 0;
   }
 }
 
@@ -41,6 +41,10 @@
     border: 1px solid #B1B1B1;
     font-size: 0.875rem;
     text-align: center;
+
+    ::after {
+      display: none;
+    }
   }
 }
 .headerLink::after {
