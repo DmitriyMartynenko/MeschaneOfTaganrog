@@ -1,4 +1,4 @@
-import { reviewAuthor1 } from '../assets/reviewAuthorsPhotos';
+import { reviewAuthor1, avatarPlaceholder } from '../assets/reviewAuthorsPhotos';
 
 export const reviews = [
   {
@@ -12,13 +12,13 @@ export const reviews = [
   {
     author: 'Алексей Иванов',
     authorJobTitle: 'Юрист компании “Иванов и партнеры”',
-    authorImgSrc: reviewAuthor1,
+    authorImgSrc: avatarPlaceholder,
     reviewText: `Отличный профессионал. Помог с оформлением документов и выиграл дело в суде.`,
   },
   {
     author: 'Мария Смирнова',
     authorJobTitle: 'Предприниматель',
-    authorImgSrc: reviewAuthor1,
+    authorImgSrc: avatarPlaceholder,
     reviewText: `Всегда можно положиться на профессионализм и точность. Спасибо!`,
   },
 ];
