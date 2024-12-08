@@ -18,36 +18,22 @@ const ReviewSlider = (props: ReviewSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef(null);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === reviews.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePrev = () => {
+  const handlePrevReview = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
     );
   };
 
-  const handleSwipe = (startX, endX) => {
-    if (startX - endX > 50) handleNext();
-    if (endX - startX > 50) handlePrev();
-  };
-
-  const handleTouchStart = (e) => {
-    sliderRef.current.startX = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e) => {
-    const endX = e.changedTouches[0].clientX;
-    handleSwipe(sliderRef.current.startX, endX);
+  const handleNextReview = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === reviews.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   return (
     <div className={styles.reviewSlider}>
       <div className={styles.reviewNavigationContainer}>
-        <button className={styles.reviewPrevButton} onClick={handlePrev}>
+        <button className={styles.reviewPrevButton} onClick={handlePrevReview}>
           <img
             className={styles.reviewPrevButtonImg}
             src={arrowLeft}
@@ -76,7 +62,7 @@ const ReviewSlider = (props: ReviewSliderProps) => {
             </div>
           </div>
         </div>
-        <button className={styles.reviewNextButton} onClick={handleNext}>
+        <button className={styles.reviewNextButton} onClick={handleNextReview}>
           <img
             className={styles.reviewNextButtonImg}
             src={arrowRight}

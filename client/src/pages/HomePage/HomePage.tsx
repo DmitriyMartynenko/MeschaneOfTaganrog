@@ -7,7 +7,6 @@ import Input from '../../components/Input/Input';
 import SignUp from '../../components/SignUp';
 import Heading from '../../components/Heading';
 import BenefitCard from '../../components/BenefitCard';
-import Review from '../../components/Review';
 import ReviewSlider from '../../components/ReviewSlider';
 import ReadMoreCard from '../../components/ReadMoreCard';
 import Link from '../../components/Link';
@@ -45,27 +44,10 @@ const HomePage = () => {
   const isTablet = useMediaQuery({ query: '(max-width: 1024px' });
 
   const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
   const orderExcursionInputRef = useRef<HTMLInputElement>(null);
 
   const onExcursionOrder = () => {
     setIsSignUpModalOpen((prev) => !prev);
-  };
-
-  const handlePreviosReview = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
-    );
-  };
-
-  const handleNextReview = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === reviews.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handleChooseReview = (reviewIndex: number) => {
-    setCurrentIndex(reviewIndex);
   };
 
   const onSubscribeNews = (event: FormEvent<HTMLFormElement>) => {
