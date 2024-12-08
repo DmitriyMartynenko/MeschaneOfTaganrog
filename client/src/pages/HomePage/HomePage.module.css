@@ -48,7 +48,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 3rem;
-  width: 750px;
+  width: 650px;
   margin-bottom: 4rem;
 
   @media (max-width: 1024px) {
@@ -106,7 +106,7 @@
 
 .promoSignUpContainer {
   width: 80%;
-  margin-left: 3rem;
+  margin-left: 2rem;
 
   @media (max-width: 1024px) {
     margin: 0;
@@ -572,8 +572,10 @@
 }
 
 .paginationButton {
-  width: 8px;
+  width: 12px;
   height: 12px;
+  margin: 0;
+  padding: 0;
   border: none;
   border-radius: 50%;
   background-color: white;
@@ -581,20 +583,21 @@
 
   @media (max-width: 768px) {
     height: 10px;
+    width: 10px;
   }
 }
 
 .paginationButtonActive {
-  width: 12px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border: 3px solid #F6F4F5;
   background-color: #A4834E;
   outline: 2px solid #A4834E;
 
   @media (max-width: 768px) {
-    width: 10px;
+    width: 12px;
     height: 12px;
-    border: 1px solid #F6F4F5;
+    border: 2px solid #F6F4F5;
   }
 }
 
@@ -659,6 +662,8 @@
 /* subscribeSection */
 
 .subscribeSection {
+  display: flex;
+  justify-content: center;
   padding: 4rem 4rem 5rem;
   background-color: #F6F4F5;
 
@@ -692,6 +697,7 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  width: 100%;
 
   @media (max-width: 1024px) {
     gap: 1.5rem;

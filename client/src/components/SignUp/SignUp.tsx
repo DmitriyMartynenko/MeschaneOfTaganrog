@@ -5,7 +5,7 @@ import Button from '../Button';
 
 import styles from './SignUp.module.css';
 
-type SignUp = {
+type SignUpProps = {
   children?: string;
   inputRef?: ForwardedRef<HTMLInputElement>;
   inputType?: string;
@@ -16,7 +16,7 @@ type SignUp = {
   buttonOnClick?: () => void;
 };
 
-const SignUp = (props: SignUp) => {
+const SignUp = (props: SignUpProps) => {
   const {
     children: text,
     inputRef,
