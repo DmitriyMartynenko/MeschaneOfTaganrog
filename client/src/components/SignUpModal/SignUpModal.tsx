@@ -1,4 +1,4 @@
-import { FormEvent, useState, useEffect } from 'react';
+import { FormEvent, useState } from 'react';
 import { createPortal } from 'react-dom';
 import axios, { AxiosResponse } from 'axios';
 

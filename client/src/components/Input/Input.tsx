@@ -1,4 +1,4 @@
-import { ForwardedRef, forwardRef, useRef, useState } from 'react';
+import { ForwardedRef, forwardRef } from 'react';
 
 import styles from './Input.module.css';
 
