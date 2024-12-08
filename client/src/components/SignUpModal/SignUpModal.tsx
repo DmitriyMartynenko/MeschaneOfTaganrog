@@ -1,12 +1,12 @@
 import { FormEvent, useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 import Input from '../Input/Input';
 import Heading from '../Heading';
 import Button from '../Button';
 
-import { getUsers, addUser } from '../../api/excursionsAPIs';
+import { addUser } from '../../api/excursionsAPIs';
 import type { User } from '../../types';
 import closeButton from '../../assets/closeButton.png';
 
@@ -24,7 +24,6 @@ type SignUpModalProps = {
 const SignUpModal = (props: SignUpModalProps) => {
   const { isOpen, toggleModal, telInputValue, isMobile } = props;
 
-  const [users, setUsers] = useState<User[]>([]);
   const [orderStatus, setOrderStatus] = useState({
     success: false,
     message: '',
@@ -33,15 +32,6 @@ const SignUpModal = (props: SignUpModalProps) => {
   const onClose = () => {
     setOrderStatus({ success: false, message: '' });
     toggleModal();
-  };
-
-  const checkUser = (orderUser: User) => {
-    const isTelephoneMatch = users.some(
-      (user) => user.phone === orderUser.phone
-    );
-    const isEmailMatch = users.some((user) => user.email === orderUser.email);
-
-    return { isTelephoneMatch, isEmailMatch };
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -56,50 +46,43 @@ const SignUpModal = (props: SignUpModalProps) => {
       email: formJSON.userEmail as string,
     };
 
-    const { isEmailMatch, isTelephoneMatch } = checkUser(orderUser);
+    try {
+      await addUser(orderUser);
+      setOrderStatus({
+        success: true,
+        message: 'Вы успешно оставили заявку на экскурсию!',
+      });
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error) && error.response) {
+        const errorResponse: AxiosResponse<{
+          phone: [string];
+          email: [string];
+        }> = error.response;
+        const { phone: isPhoneMatch, email: isEmailMatch } = errorResponse.data;
 
-    if (isTelephoneMatch)
-      setOrderStatus({
-        success: false,
-        message: 'Пользователь с таким номером телефона уже оставил заявку!',
-      });
-    else if (isEmailMatch)
-      setOrderStatus({
-        success: false,
-        message: 'Пользователь с таким e-mail уже оставил заявку!',
-      });
-    else {
-      try {
-        await addUser(orderUser);
-        setOrderStatus({
-          success: true,
-          message: 'Вы успешно оставили заявку на экскурсию!',
-        });
-      } catch (error) {
-        if (axios.isAxiosError(error)) {
+        if (isPhoneMatch) {
           setOrderStatus({
             success: false,
-            message: error.message,
+            message:
+              'Пользователь с таким номером телефона уже оставил заявку!',
           });
-        } else
+        } else if (isEmailMatch) {
+          setOrderStatus({
+            success: false,
+            message: 'Пользователь с таким e-mail уже оставил заявку!',
+          });
+        } else {
           setOrderStatus({
             success: false,
             message: 'Неизвестная ошибка',
           });
+        }
       }
     }
   };
 
-  useEffect(() => {
-    const loadUsers = async () => {
-      const { data: usersData } = await getUsers();
-      setUsers(usersData);
-    };
-
-    void loadUsers();
-  }, []);
-
   if (!isOpen) return null;
+
   return createPortal(
     <div className={styles.signUpModal}>
       <div className={styles.signUpModalWrapper}>
@@ -120,7 +103,7 @@ const SignUpModal = (props: SignUpModalProps) => {
               <Input
                 type="tel"
                 name="userPhone"
-                value={telInputValue}
+                defaultValue={telInputValue}
                 placeholder="+7 (___) ___ __ __"
                 minLength={12}
                 maxLength={12}

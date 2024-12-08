@@ -39,7 +39,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-  'https://meschane-of-taganrog.onrender.com'
+  'https://meschane-of-taganrog.onrender.com',
+  'http://localhost:5173',
 ]
 
 ROOT_URLCONF = 'server.urls'

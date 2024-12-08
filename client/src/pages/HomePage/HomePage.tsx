@@ -8,6 +8,7 @@ import SignUp from '../../components/SignUp';
 import Heading from '../../components/Heading';
 import BenefitCard from '../../components/BenefitCard';
 import Review from '../../components/Review';
+import ReviewSlider from '../../components/ReviewSlider';
 import ReadMoreCard from '../../components/ReadMoreCard';
 import Link from '../../components/Link';
 import SignUpModal from '../../components/SignUpModal';
@@ -30,8 +31,6 @@ import {
   meschane3,
 } from '../../assets/meschaneOfTaganrog';
 import tgliamz from '../../assets/TGLIAMZ.png';
-import arrowLeft from '../../assets/arrowLeft.png';
-import arrowRight from '../../assets/arrowRight.png';
 import {
   readMoreImg1,
   readMoreImg2,
@@ -148,11 +147,7 @@ const HomePage = () => {
             alt="Мещанин"
             id="meschaneInfo"
           />
-          <img
-            className={styles.quotesImg}
-            src={quotes}
-            alt="Кавычки"
-          />
+          <img className={styles.quotesImg} src={quotes} alt="Кавычки" />
         </div>
         <div className={styles.meschaneInfoTextContent}>
           <Heading
@@ -180,10 +175,7 @@ const HomePage = () => {
           </p>
         </div>
       </section>
-      <section
-        className={styles.tryExcursionsSection}
-        id="tryExcursions"
-      >
+      <section className={styles.tryExcursionsSection} id="tryExcursions">
         <div className={styles.tryExcursionsHeadingContainer}>
           <p className={styles.tryExcursionsSubtitle}>
             Почему стоит попробовать
@@ -240,16 +232,10 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section
-        className={styles.ourPartnersSection}
-        id="ourPartners"
-      >
+      <section className={styles.ourPartnersSection} id="ourPartners">
         <h2 className={styles.ourPartnersTitle}>Наши партнеры</h2>
         <div className={styles.ourPartnersImgContainer}>
-          <Link
-            to="https://tgliamz.ru/"
-            openInNewTab
-          >
+          <Link to="https://tgliamz.ru/" openInNewTab>
             <img
               className={styles.ourPartnersTGLIAMZimg}
               src={tgliamz}
@@ -267,53 +253,13 @@ const HomePage = () => {
         </Link>
       </section>
       <section className={styles.reviewsSection}>
-        <Heading
-          subtitle="О нас говорят"
-          wordsToHighlight={['Отзывы']}
-        >
+        <Heading subtitle="О нас говорят" wordsToHighlight={['Отзывы']}>
           Отзывы наших клиентов
         </Heading>
-        <div className={styles.reviewContainer}>
-          <div className={styles.buttonsContainer}>
-            <button
-              className={styles.arrowLeftButton}
-              onClick={handlePreviosReview}
-            >
-              <img
-                className={styles.arrowLeftImg}
-                src={arrowLeft}
-                alt="Стрелка налево"
-              />
-            </button>
-            <Review
-              author={reviews[currentIndex].author}
-              authorJobTitle={reviews[currentIndex].authorJobTitle}
-              authorImgSrc={reviews[currentIndex].authorImgSrc}
-            >
-              {reviews[currentIndex].reviewText}
-            </Review>
-            <button
-              className={styles.arrowRightButton}
-              onClick={handleNextReview}
-            >
-              <img
-                className={styles.arrowRightImg}
-                src={arrowRight}
-                alt="Стрелка направо"
-              />
-            </button>
-          </div>
-          <div className={styles.paginationContainer}>
-            {reviews.map((_, index) => (
-              <button
-                key={index}
-                className={`${styles.paginationButton} ${
-                  index === currentIndex ? styles.paginationButtonActive : ''
-                }`}
-                onClick={() => handleChooseReview(index)}
-              ></button>
-            ))}
-          </div>
+        <div className={styles.reviewSliderContainer}>
+          <ReviewSlider
+            reviews={reviews}
+          />
         </div>
       </section>
       <section className={styles.goodToKnowSection}>
@@ -373,10 +319,7 @@ const HomePage = () => {
         </div>
       </section>
       <section className={styles.subscribeSection}>
-        <form
-          className={styles.subscribeForm}
-          onSubmit={onSubscribeNews}
-        >
+        <form className={styles.subscribeForm} onSubmit={onSubscribeNews}>
           <Heading
             subtitle="Будьте в курсе"
             lineBeforeSubtitle={false}
@@ -452,10 +395,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className={styles.footerSignUpContainer}>
-              <form
-                className={styles.orderCallForm}
-                onSubmit={onOrderCall}
-              >
+              <form className={styles.orderCallForm} onSubmit={onOrderCall}>
                 <SignUp
                   inputType="tel"
                   inputName="orderCallTelephone"

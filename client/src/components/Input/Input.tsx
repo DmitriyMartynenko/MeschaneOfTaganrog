@@ -1,11 +1,12 @@
-import { ForwardedRef, forwardRef } from 'react';
+import { ForwardedRef, forwardRef, useRef, useState } from 'react';
+
 import styles from './Input.module.css';
 
 type InputProps = {
   type?: string;
   id?: string;
   name?: string;
-  value?: string;
+  defaultValue?: string;
   minLength?: number;
   maxLength?: number;
   placeholder?: string;
@@ -19,7 +20,7 @@ const Input = forwardRef(
       type = 'text',
       id,
       name,
-      value,
+      defaultValue,
       minLength,
       maxLength,
       placeholder,
@@ -34,7 +35,7 @@ const Input = forwardRef(
         type={type}
         id={id}
         name={name}
-        defaultValue={value}
+        defaultValue={defaultValue}
         minLength={minLength}
         maxLength={maxLength}
         placeholder={placeholder}

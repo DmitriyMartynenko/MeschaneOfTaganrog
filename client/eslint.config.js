@@ -39,6 +39,7 @@ export default tseslint.config(
       '@typescript-eslint/no-unused-vars': 'off',
       'no-debugger': 'off',
       '@typescript-eslint/no-misused-promises': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off'
     },
   }
 );

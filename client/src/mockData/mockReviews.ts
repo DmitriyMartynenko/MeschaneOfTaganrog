@@ -1,6 +1,8 @@
+import type { Review } from '../types';
+
 import { reviewAuthor1, avatarPlaceholder } from '../assets/reviewAuthorsPhotos';
 
-export const reviews = [
+export const reviews: Review[] = [
   {
     author: 'Юлия Воробьева',
     authorJobTitle: 'Директор компании “Воробьева и ко”',

@@ -15,3 +15,10 @@ export type ExcursionOrder = {
   excursion: Excursion;
   orderDate: Date;
 };
+
+export type Review = {
+  author: string;
+  authorJobTitle: string;
+  authorImgSrc: string;
+  reviewText: string;
+}
