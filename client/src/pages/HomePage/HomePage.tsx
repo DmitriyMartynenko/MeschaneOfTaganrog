@@ -7,12 +7,12 @@ import Input from '../../components/Input/Input';
 import SignUp from '../../components/SignUp';
 import Heading from '../../components/Heading';
 import BenefitCard from '../../components/BenefitCard';
-import ReviewSlider from '../../components/ReviewSlider';
-import ReadMoreCard from '../../components/ReadMoreCard';
+// import ReviewSlider from '../../components/ReviewSlider';
+// import ReadMoreCard from '../../components/ReadMoreCard';
 import Link from '../../components/Link';
 import SignUpModal from '../../components/SignUpModal';
 
-import { reviews } from '../../mockData/mockReviews';
+// import { reviews } from '../../mockData/mockReviews';
 
 import logo from '../../assets/logo.png';
 import stoneStair from '../../assets/stoneStair.png';
@@ -30,12 +30,12 @@ import {
   meschane3,
 } from '../../assets/meschaneOfTaganrog';
 import tgliamz from '../../assets/TGLIAMZ.png';
-import {
-  readMoreImg1,
-  readMoreImg2,
-  readMoreImg3,
-  readMoreImg4,
-} from '../../assets/readMoreCardImages';
+// import {
+//   readMoreImg1,
+//   readMoreImg2,
+//   readMoreImg3,
+//   readMoreImg4,
+// } from '../../assets/readMoreCardImages';
 
 import styles from './HomePage.module.css';
 
