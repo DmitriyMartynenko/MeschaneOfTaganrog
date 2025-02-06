@@ -49,7 +49,7 @@ const ReviewSlider = (props: ReviewSliderProps) => {
               }}
             >
               {reviews.map((review) => (
-                <div className={styles.reviewSlide}>
+                <div key={review.id} className={styles.reviewSlide}>
                   <Review
                     author={review.author}
                     authorJobTitle={review.authorJobTitle}
@@ -71,9 +71,9 @@ const ReviewSlider = (props: ReviewSliderProps) => {
         </button>
       </div>
       <div className={styles.reviewPaginationContainer}>
-        {reviews.map((_, index) => (
+        {reviews.map((review, index) => (
           <button
-            key={index}
+            key={review.id}
             className={`${styles.reviewPaginationDot} ${
               index === currentIndex ? styles.paginationDotActive : ''
             }`}

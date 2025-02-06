@@ -17,6 +17,7 @@ export type ExcursionOrder = {
 };
 
 export type Review = {
+  id: number;
   author: string;
   authorJobTitle: string;
   authorImgSrc: string;

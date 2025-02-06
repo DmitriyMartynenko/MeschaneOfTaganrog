@@ -239,12 +239,14 @@ const HomePage = () => {
           Отзывы наших клиентов
         </Heading>
         <div className={styles.reviewSliderContainer}>
-          <ReviewSlider
+          {/* <ReviewSlider
             reviews={reviews}
-          />
+          /> */}
+          <p className={styles.comingSoon}>Скоро здесь появятся отзывы наших клиентов</p>
         </div>
       </section>
-      <section className={styles.goodToKnowSection}>
+      {/* <hr /> */}
+      {/* <section className={styles.goodToKnowSection}>
         <div className={styles.goodToKnowWrapper}>
           <div className={styles.goodToKnowHeadingContainer}>
             <Heading
@@ -299,7 +301,7 @@ const HomePage = () => {
             </div>
           )}
         </div>
-      </section>
+      </section> */}
       <section className={styles.subscribeSection}>
         <form className={styles.subscribeForm} onSubmit={onSubscribeNews}>
           <Heading
